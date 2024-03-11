@@ -25,7 +25,7 @@
 		</div>
 		<div id="title2">
 			<a href="index.php">
-			<img src="./icon/health_banner-01.jpg" title="健康促進網－回首頁">
+				<img src="./icon/health_banner-01.jpg" title="健康促進網－回首頁">
 			</a>
 		</div>
 		<div id="mm">
@@ -38,7 +38,7 @@
 			</div>
 			<div class="hal" id="main">
 				<div>
-
+					<marquee style="width:80%">今天到底能不能把題組二做完呢??????</marquee>
 					<span style="width:18%; display:inline-block;">
 						<a href="?do=login">會員登入</a>
 					</span>
