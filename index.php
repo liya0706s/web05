@@ -37,9 +37,9 @@
 				<a class="blo" href="?do=que">問卷調查</a>
 			</div>
 			<div class="hal" id="main">
-				<div>
+				<div style="display: flex;">
 					<marquee style="width:80%">今天到底能不能把題組二做完呢??????</marquee>
-					<span style="width:18%; display:inline-block;">
+					<span style="width:15%; display:inline-block;">
 						<?php
 						if (!isset($_SESSION['user'])) {
 						?>
@@ -58,17 +58,17 @@
 						}
 						?>
 					</span>
-					<div class="">
-						<?php
-						$do = $_GET['do'] ?? 'main';
-						$files = "./front/{$do}.php";
-						if (file_exists($files)) {
-							include $files;
-						} else {
-							include "./front/main.php";
-						}
-						?>
-					</div>
+				</div>
+				<div class="">
+					<?php
+					$do = $_GET['do'] ?? 'main';
+					$files = "./front/{$do}.php";
+					if (file_exists($files)) {
+						include $files;
+					} else {
+						include "./front/main.php";
+					}
+					?>
 				</div>
 			</div>
 		</div>
