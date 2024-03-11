@@ -125,7 +125,12 @@ function to($url)
 }
 
 $Title = new DB('title');
+
 $Total = new DB('total');
+$Log = new DB('log');
+$News=new DB('news');
+$User=new DB('user');
+
 
 
 if (!isset($_SESSION['visited'])) {
