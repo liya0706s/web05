@@ -4,13 +4,13 @@
         <tr>
             <td>帳號</td>
             <td>
-                <input type="text" name="acc" value="">
+                <input type="text" name="acc" id="acc" value="">
             </td>
         </tr>
         <tr>
             <td>密碼</td>
             <td>
-                <input type="password" name="pw" value="">
+                <input type="password" name="pw" id="pw" value="">
             </td>
         </tr>
         <tr>
@@ -37,9 +37,13 @@
             }else{
                 $.post("./api/chk_pw.php",{acc,pw},(res)=>{
                     if(parseInt(res)==1){
-                        location.href("index.php");
+                       if(acc=='admin'){
+                        location.href="back.php";
+                       }else{
+                        location.href="index.php";
+                       }
                     }else{
-                        alert("密碼錯誤");
+                        alert("密碼錯誤!");
                     }
                 })
             }
