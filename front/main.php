@@ -9,6 +9,7 @@
         border: 1px black solid;
         padding: 5px 0;
         text-align: center;
+        cursor: pointer;
     }
 
     article section {
