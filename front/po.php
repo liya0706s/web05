@@ -32,13 +32,12 @@
 </fieldset>
 
 <script>
-  // getList(1)
+  getList(1)
   $(".type-item").on('click', function() {
     $(".type").text($(this).text())
     let id = $(this).data('id')
-    // getList(id)
+    getList(id)
   })
-
 
   function getList(id) {
     $.get('./api/get_list.php', {
@@ -47,6 +46,16 @@
       $(".list-item").html(list)
       $(".list-item").show()
       $(".article").hide()
+    })
+  }
+
+  function getNews(idid) {
+    $.get('./api/get_news.php', {
+      idid
+    }, (news) => {
+      $(".article").html(news)
+      $('.list-item').hide();
+      $('.article').show()
     })
   }
 </script>
