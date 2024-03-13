@@ -1,13 +1,22 @@
 <?php
-$ques = $Que->all();
-foreach ($ques as $que) {
+$que = $Que->find($_GET['id']);
 ?>
-    <fieldset>
-        <legend>目前位置 : 首頁 > 問卷調查 > <span id="title"></span></legend>
-        <h4><?=$que['text'];?></h4>
-        <input type="radio" name="" value="<?=$que['id'];?>">
 
-    <?php
+<fieldset>
+    <legend>目前位置 : 首頁 > 問卷調查 > <?= $que['text']; ?></legend>
+    <h4><?= $que['text']; ?></h4>
+    <form action="./api/vote.php" method="post">
+        <?php
+        $opts = $Que->all(['subject_id' => $_GET['id']]);
+        foreach ($opts as $opt) {
+        ?>
+            <div>
+                <input type="radio" name="opt" value="<?= $opt['id']; ?>">
+                <?= $opt['text']; ?>
+            </div>
+        <?php
         }
-    ?>
-    </fieldset>
+        ?>
+        <div class="ct"><input type="submit" value="我要投票"></div>
+    </form>
+</fieldset>
