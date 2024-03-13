@@ -44,6 +44,7 @@
             </tr>
         <?php } ?>
     </table>
+    <div>
     <?php
     if (($now - 1) > 0) {
         $prev = $now - 1;
@@ -60,6 +61,7 @@
         echo "<a href='?do=news&p=$next'> > </a>";
     }
     ?>
+    </div>
 </fieldset>
 
 <script>

@@ -13,7 +13,7 @@
         $now = $_GET['p'] ?? 1;
         $start = ($now - 1) * $div;
 
-        $rows = $News->all(['sh' => 1], " limit $start, $div");
+        $rows = $News->all(['sh' => 1], " order by `good` desc limit $start, $div");
         foreach ($rows as $row) {
         ?>
             <tr>
@@ -30,10 +30,10 @@
                 </td>
 
                 <td class="ct">
+                    <span><?=$row['good'];?>個人說</span>
+                    <img src='./icon/02B03.jpg' style='width:20px'>
                     <?php
-                    $row['good'];
-                    echo "個人說讚";
-                    echo "<img src='./icon/02B03.jpg' style='width:20px'>";
+                   
                     // 登入的按讚紀錄
                     if (isset($_SESSION['user'])) {
                         if ($Log->count(['news' => $row['id'], 'acc' => $_SESSION['user']]) > 0) {
