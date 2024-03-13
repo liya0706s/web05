@@ -12,20 +12,24 @@
         $now = $_GET['p'] ?? 1;
         $start = ($now - 1) * $div;
 
-        $news = $News->all(['sh' => 1], " limit $start, $div");
+        $rows = $News->all(['sh' => 1], " limit $start, $div");
+        foreach($rows as $row){
         ?>
         <tr>
-            <td id="t">
-                <?= $news['title']; ?></td>
+            <td id="t" >
+                <?= $row['title']; ?>
+            </td>
+            
             <td>
-                <div class="s<?= $news['id']; ?>">
-                    <?= mb_substr($news['news'], 0, 25); ?>
+                <div class="s<?= $row['id']; ?>">
+                    <?= mb_substr($row['news'], 0, 25); ?>
                 </div>
-                <div class="a<?= $news['id']; ?>">
-                    <?= $news['news']; ?>
+                <div class="a<?= $row['id']; ?>">
+                    <?= $row['news']; ?>
                 </div>
             </td>
         </tr>
+        <?php } ?>
     </table>
     <?php
     if(($now-1)>0){
