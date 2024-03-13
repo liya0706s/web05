@@ -16,6 +16,6 @@ if(isset($_POST['option'])){
     }
 }
 
-// to("../back.php?do=que");
+to("../back.php?do=que");
 
 ?>

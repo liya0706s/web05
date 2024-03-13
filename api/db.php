@@ -125,11 +125,11 @@ function to($url)
 }
 
 $Title = new DB('title');
-$Que=new DB('que');
+$Que = new DB('que');
 $Total = new DB('total');
 $Log = new DB('log');
-$News=new DB('news');
-$User=new DB('user');
+$News = new DB('news');
+$User = new DB('user');
 
 
 
