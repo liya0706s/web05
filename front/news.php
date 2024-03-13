@@ -23,7 +23,7 @@
             
             <td>
                 <div id="s<?= $row['id']; ?>">
-                    <?= mb_substr($row['news'], 0, 25); ?>
+                    <?= mb_substr($row['news'], 0, 25) ;?>...
                 </div>
                 <div id="a<?= $row['id']; ?>" style="display: none;">
                     <?= $row['news']; ?> 
@@ -38,7 +38,7 @@
     <?php
     if(($now-1)>0){
         $prev=$now-1;
-        echo "<a href='?do=news&p=$next'> < </a>";
+        echo "<a href='?do=news&p=$prev'> < </a>";
     }
 
     for($i=1; $i<=$pages; $i++){
