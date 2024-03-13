@@ -2,8 +2,9 @@
     <legend>目前位置 : 首頁 > 最新文章區 </legend>
     <table>
         <tr>
-            <th>標題</th>
-            <th>內容</th>
+            <th style="width:30%;">標題</th>
+            <th style="width:50%;">內容</th>
+            <th></th>
         </tr>
         <?php
         $total = $News->count();
@@ -16,17 +17,20 @@
         foreach($rows as $row){
         ?>
         <tr>
-            <td id="t" >
+            <td class="clo t" style="cursor:pointer;" data-id="<?=$row['id'];?>">
                 <?= $row['title']; ?>
             </td>
             
             <td>
-                <div class="s<?= $row['id']; ?>">
+                <div id="s<?= $row['id']; ?>">
                     <?= mb_substr($row['news'], 0, 25); ?>
                 </div>
-                <div class="a<?= $row['id']; ?>">
-                    <?= $row['news']; ?>
+                <div id="a<?= $row['id']; ?>" style="display: none;">
+                    <?= $row['news']; ?> 
                 </div>
+            </td>
+            <td>
+
             </td>
         </tr>
         <?php } ?>
@@ -49,3 +53,10 @@
 
     ?>
 </fieldset>
+
+<script>
+$(".t").on('click',function(){
+    let id=$(this).data('id');
+    $(`#s${id},#a${id}`).toggle();
+})
+</script>
