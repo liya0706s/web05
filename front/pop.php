@@ -24,8 +24,9 @@
                     <div id="s<?= $row['id']; ?>">
                         <?= mb_substr($row['news'], 0, 25); ?>
                     </div>
-                    <div id="a<?= $row['id']; ?>" style="display:none;">
-                        <?= $row['news']; ?>
+                    <div id="a<?= $row['id']; ?>" style="display:none;" class="pop">
+                    <h3 style="color:lightblue"><?=$row['title'];?></h3>    
+                    <?= $row['news']; ?>
                     </div>
                 </td>
 
@@ -66,10 +67,11 @@
 </fieldset>
 
 <script>
-    $(".t").on('click', function() {
-        let id = $(this).data('id');
-        $(`#s${id}, #a${id}`).toggle();
-    })
+   $(".t").hover(function(){
+    $(".pop").hide()
+    let id= $(this).data('id')
+    $("#a"+id).show()
+   })
 
     // 用POST傳值，這裡指的是-按讚紀錄表的news
     function good(news) {

@@ -17,10 +17,9 @@
 			color: #FFF;
 			min-height: 100px;
 			width: 300px;
-			position: fixed;
+			position: absolute;
 			display: none;
-			/* z-index: 9999; */
-			z-index:1px;
+			z-index: 9999;
 			overflow: auto;
 		}
 	</style>
