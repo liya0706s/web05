@@ -2,11 +2,11 @@
     <legend>目前位置 : 首頁 > 問卷調查</legend>
     <table class="ct" style="margin: auto; width:90%;">
         <tr class="clo">
-            <td>編號</td>
-            <td>問卷題目</td>
-            <td>投票總數</td>
-            <td>結果</td>
-            <td>狀態</td>
+            <th>編號</th>
+            <th>問卷題目</th>
+            <th>投票總數</th>
+            <th>結果</th>
+            <th>狀態</th>
         </tr>
         <?php
         $rows = $Que->all(['subject_id' => 0]);
