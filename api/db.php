@@ -90,7 +90,7 @@ class DB
             $tmp = $this->a2s($id);
             $sql .= join(" && ", $tmp);
         } else if (is_numeric($id)) {
-            $sql .= "`id`='$id'";
+            $sql .= " `id`='$id'";
         }
         return $this->pdo->exec($sql);
     }
