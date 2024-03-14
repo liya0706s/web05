@@ -56,7 +56,7 @@
         echo "<a href='?do=news&p=$i' style='$fontsize'> $i </a>";
     }
 
-    if (($now + 1) >= $pages) {
+    if (($now + 1) <= $pages) {
         $next = $now + 1;
         echo "<a href='?do=news&p=$next'> > </a>";
     }
